@@ -64,3 +64,5 @@ You can Ctrl-C in Terminal 1, then type exit to shut down the container. You sho
 docker rm cabin
 ```
 The install/build changes should be persistent in the src directory, so if re-run the container you should be able to go straight to running the api/webpack and app.
+
+At this point you should either follow the tutorial to setup your GetStream.io account and include the App ID, key, and secret in env.sh (or you can put them in the Dockerfile).
