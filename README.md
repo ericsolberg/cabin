@@ -25,17 +25,11 @@ In the first window we'll launch the container interactively (so we can work ins
 In Terminal 1:
 
 `docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
-
 \# You're now inside the container at /app/src
-
 cd api
-
 npm install
-
 cd ../app
-
 npm install
-
 \# This step comes from this issue:
 
 \# https://github.com/GetStream/stream-react-example/issues/42
