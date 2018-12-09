@@ -1,7 +1,7 @@
 # GetStream.io React Tutorial
 This is an attempt to make the [GetStream React Tutorial](https://getstream.io/cabin/) to work. I was having difficulty making it work on my Mac, with many version conflicts so I decided to use a Docker container to have a clean, repeatable environment.
 
-Even with the clean Docker set, I still had numerous problems. I had to figure out the version dependencies of the tutorial through trial and error. After working through, everything installs and builds cleanly, but the tutorial starting code still doesn't run. Initially, I just got an empty white browser screen when I launched the browser to the app. After changing the versions of some React components, based on a response to this issue on the tutorial Github page, I now have a background image and some text, but it doesn't seem the full app is working yet.
+Even with the clean Docker setup, I still had numerous problems. I had to figure out the version dependencies through trial and error. After a lot of banging my head on my keyboard, everything installs and builds cleanly, but the tutorial starting code still doesn't fully run. Initially, I just got an empty white browser screen when I launched. After changing the versions of some React components, based on a response to this issue on the tutorial Github page, I now have a background image and some text, but it doesn't seem the full app is working yet.
 
 I'm posting this here in case others will find it useful and perhaps someone may help get this working.
 
@@ -30,7 +30,7 @@ In the first window we'll launch the container interactively (so we can work ins
 In Terminal 1:
 ```
 docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
-\# You're now inside the container at /app/src
+# You're now inside the container at /app/src
 cd api
 npm install
 cd ../app
@@ -55,7 +55,7 @@ docker exec -it cabin /bin/bash
 cd app
 npm start
 ```
-Now launch your browser to htpp://localhost:3000
+Now launch your browser to [htpp://localhost:3000](htpp://localhost:3000)
 
 You can Ctrl-C in Terminal 1, then type exit to shut down the container. You should then clean up the leftover image with:
 ```
