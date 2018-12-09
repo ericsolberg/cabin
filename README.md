@@ -8,16 +8,19 @@ I'm posting this here in case others will find it useful and perhaps someone may
 Note that the Dockerfile includes the secret key for my Getstream tutorial project. Of course, you should use your own (it's free). When I'm done with it I'll delete that project.
 ## Steps to run
 ### Clone this project
-```git clone https://github.com/ericsolberg/cabin.git
+```
+git clone https://github.com/ericsolberg/cabin.git
 cd cabin
 ```
 ### Get the Cabin tutorial code
 The cabin code isn't included in this repository (it is excluded in the .gitignore). Fetch it from Github:
-```mkdir src
+```
+mkdir src
 git clone https://github.com/GetStream/stream-react-example src/
 ```
 ### Build the Docker container
-```docker build -t cabin
+```
+docker build -t cabin
 ```
 ### Launch and build the tutorial
 Open three terminal windows.
@@ -25,7 +28,8 @@ Open three terminal windows.
 In the first window we'll launch the container interactively (so we can work inside the container). The cabin source code will be mapped to a directory inside the container. You can edit the files outside of the container using whatever editor you want to use, and the edits will appear in the container.
 
 In Terminal 1:
-```docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
+```
+docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
 \# You're now inside the container at /app/src
 cd api
 npm install
@@ -38,13 +42,15 @@ cd ../api
 node index.js
 ```
 In Terminal 2:
-```docker exec -it cabin /bin/bash
+```
+docker exec -it cabin /bin/bash
 # You're now inside the container at /app/src
 cd app
 webpack --watch --progress
 ```
 In Terminal 3:
-```docker exec -it cabin /bin/bash
+```
+docker exec -it cabin /bin/bash
 # You're now inside the container at /app/src
 cd app
 npm start
@@ -52,7 +58,7 @@ npm start
 Now launch your browser to htpp://localhost:3000
 
 You can Ctrl-C in Terminal 1, then type exit to shut down the container. You should then clean up the leftover image with:
-
-`docker rm cabin`
-
+```
+docker rm cabin
+```
 The install/build changes should be persistent in the src directory, so if re-run the container you should be able to go straight to running the api/webpack and app.
