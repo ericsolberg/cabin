@@ -25,30 +25,51 @@ In the first window we'll launch the container interactively (so we can work ins
 In Terminal 1:
 
 `docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
+
 \# You're now inside the container at /app/src
+
 cd api
+
 npm install
+
 cd ../app
+
 npm install
+
 \# This step comes from this issue:
+
 \# https://github.com/GetStream/stream-react-example/issues/42
+
 npm install react@15.6.2 react-dom@15.6.2 react-router@3.2.0
+
 cd ../api
+
 node index.js`
+
 In Terminal 2:
+
 `docker exec -it cabin /bin/bash
-# You're now inside the container at /app/src
+
+\# You're now inside the container at /app/src
+
 cd app
+
 webpack --watch --progress`
+
 In Terminal 3:
+
 `docker exec -it cabin /bin/bash
-# You're now inside the container at /app/src
+
+\# You're now inside the container at /app/src
+
 cd app
+
 npm start`
 
 Now launch your browser to htpp://localhost:3000
 
 You can Ctrl-C in Terminal 1, then type exit to shut down the container. You should then clean up the leftover image with:
+
 `docker rm cabin`
 
 The install/build changes should be persistent in the src directory, so if re-run the container you should be able to go straight to running the api/webpack and app.
