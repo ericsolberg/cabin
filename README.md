@@ -1,9 +1,9 @@
 # GetStream.io React Tutorial
-This is an attempt to make the [GetStream React Tutorial](https://getstream.io/cabin/) to work. I was having difficulty making it work on my Mac, with many version conflicts so I decided to use a Docker container to have a clean, repeatable environment.
+This project is based on the [GetStream React Tutorial](https://getstream.io/cabin/). I was having difficulty making it work on my Mac, with many version conflicts so I decided to use a Docker container to have a clean, repeatable environment.
 
-Even with the clean Docker setup, I still had numerous problems. I had to figure out the version dependencies through trial and error. After a lot of banging my head on my keyboard, everything installs and builds cleanly, but the tutorial starting code still doesn't fully run. Initially, I just got an empty white browser screen when I launched. After changing the versions of some React components, based on a response to this issue on the tutorial Github page, I now have a background image and some text, but it doesn't seem the full app is working yet.
+Even with the clean Docker setup, I still had numerous problems. I had to figure out the version dependencies through trial and error. After a lot of banging my head on my keyboard, everything installs and builds cleanly. It looks like this is a good starting point for working through the tutorial.
 
-I'm posting this here in case others will find it useful and perhaps someone may help get this working.
+I'm posting this here in case others will find it useful.
 
 Note that the Dockerfile includes the secret key for my Getstream tutorial project. Of course, you should use your own (it's free). When I'm done with it I'll delete that project.
 ## Steps to run
