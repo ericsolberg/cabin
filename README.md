@@ -20,7 +20,7 @@ git clone https://github.com/GetStream/stream-react-example src/
 ```
 ### Build the Docker container
 ```
-docker build -t cabin
+docker build -t cabin .
 ```
 ### Launch and build the tutorial
 Open three terminal windows.
@@ -55,7 +55,7 @@ docker exec -it cabin /bin/bash
 cd app
 npm start
 ```
-Now launch your browser to [htpp://localhost:3000](htpp://localhost:3000)
+Now launch your browser to http://localhost:3000
 
 You can Ctrl-C in Terminal 1, then type exit to shut down the container. You should then clean up the leftover image with:
 ```
