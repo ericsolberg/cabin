@@ -12,6 +12,7 @@ Note that the Dockerfile includes the secret key for my Getstream tutorial proje
 cd cabin`
 ### Get the Cabin tutorial code
 The cabin code isn't included in this repository (it is excluded in the .gitignore). Fetch it from Github:
+
 `mkdir src
 git clone https://github.com/GetStream/stream-react-example src/`
 ### Build the Docker container
@@ -22,14 +23,15 @@ Open three terminal windows.
 In the first window we'll launch the container interactively (so we can work inside the container). The cabin source code will be mapped to a directory inside the container. You can edit the files outside of the container using whatever editor you want to use, and the edits will appear in the container.
 
 In Terminal 1:
+
 `docker run --name "cabin" -p 3000:3000 -v $(pwd)/src:/app/src -it cabin
-# You're now inside the container at /app/src
+\# You're now inside the container at /app/src
 cd api
 npm install
 cd ../app
 npm install
-# This step comes from this issue:
-# https://github.com/GetStream/stream-react-example/issues/42
+\# This step comes from this issue:
+\# https://github.com/GetStream/stream-react-example/issues/42
 npm install react@15.6.2 react-dom@15.6.2 react-router@3.2.0
 cd ../api
 node index.js`
