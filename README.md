@@ -6,6 +6,8 @@ Even with the clean Docker setup, I still had numerous problems. I had to figure
 I'm posting this here in case others will find it useful.
 
 Note that the Dockerfile includes the secret key for my Getstream tutorial project. Of course, you should use your own (it's free). When I'm done with it I'll delete that project.
+
+I did introduce one (optional) change from the tutorial. I have put all the environment variables from env.sh into the container through the Dockerfile. If you set up your env settings here, you don't need to always source env.sh. You just need to rebuild the container whenever you add/change the values. But if you don't want do do that, just ignore the docker ENV settings and use env.sh per the instructions.
 ## Steps to run
 ### Clone this project
 ```
@@ -62,3 +64,5 @@ You can Ctrl-C in Terminal 1, then type exit to shut down the container. You sho
 docker rm cabin
 ```
 The install/build changes should be persistent in the src directory, so if re-run the container you should be able to go straight to running the api/webpack and app.
+
+At this point you should either follow the tutorial to setup your GetStream.io account and include the App ID, key, and secret in env.sh (or you can put them in the Dockerfile).
